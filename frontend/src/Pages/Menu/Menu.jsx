@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { Tab, Tabs } from 'react-bootstrap';
 import './Menu.css';
-import coffe1 from '../../assets/graos.jpg';
-import coffe2 from '../../assets/petit.jpg';
-import coffe3 from '../../assets/croissant.jpeg';
-import coffe4 from '../../assets/milk.jpeg';
-import coffe5 from '../../assets/cha.jpeg';
+import coffe1 from '../../assets/pratos.jpg';
+import coffe2 from '../../assets/sobremesas.jpg';
+import coffe3 from '../../assets/especiais.jpg';
+import coffe4 from '../../assets/bebidas.jpg';
+import coffe5 from '../../assets/chas.jpg';
 
 const Menu = () => {
   const [currentImage, setCurrentImage] = useState(coffe1);
@@ -13,7 +13,7 @@ const Menu = () => {
   return (
     <div className="content">
       <div className="header">
-        <h2>Café do Amanhã</h2>
+        <h2>Miyabi Sushi</h2>
       </div>
       <div className="main-menu">
 

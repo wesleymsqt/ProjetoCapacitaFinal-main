@@ -2,14 +2,14 @@
   flex: 1;
   display: block;
   background-color: #ffffff99;
-  color: #4783df;
+  color: #920a0a;
   padding-bottom: 0px;
   padding-top: 10px;
 }
 
 .header {
   & h2 {
-    color: rgb(71, 131, 223);
+    color: #920a0a;
     font-size: 2.5rem;
     margin-top: 2%;
     text-align: center;
@@ -55,14 +55,14 @@
 
 .nav-tabs .nav-link:hover {
   color: #fff !important;
-  background-color: rgb(71, 131, 223);
+  background-color: #920a0a;
 }
 
 .menu-list {
   list-style-type: none;
   margin: 0;
   padding: 0;
-  color: #4783df;
+  color: #920a0a;
 
   & li {
     display: flex;
