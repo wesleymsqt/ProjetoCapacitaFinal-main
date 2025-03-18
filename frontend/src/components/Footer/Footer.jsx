@@ -9,7 +9,7 @@ function Footer() {
   return (
     <footer className="footer">
         <p>
-          &copy; {getCurrentYear()} Café do Amanhã. Todos os direitos
+          &copy; {getCurrentYear()} Miyabi Sushi. Todos os direitos
           reservados.
         </p>
         <p>738 Av. Beira Mar, Fortaleza, CE | (85) 1234-5678</p>

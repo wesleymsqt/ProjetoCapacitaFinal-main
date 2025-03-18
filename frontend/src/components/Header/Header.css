@@ -1,19 +1,25 @@
 .navbar {
-  background-color: rgb(71, 131, 223);
-  font-family: 'Roboto', cursive;
-  color: #fff !important;
+  background-color: #080808;
 }
 
 .navbar-nav .nav-link {
   color: #fff !important;
-  font-family: 'Roboto', cursive;
-  font-size: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
   font-weight: bold;
-  padding: 10px;
+  padding: 18px;
 }
 
 .navbar-nav .nav-link:hover {
   background-color: #fff;
-  color: rgb(71, 131, 223) !important;
+  color: #920a0a !important;
+  font-weight: bold;
   border-radius: 5px;
+}
+
+.navbar-title {
+  font-family: 'Brush Script MT', cursive;
+  color: #d70000 !important;
+  font-size: 36px;
+  padding-top: 4px;
 }

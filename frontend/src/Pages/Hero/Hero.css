@@ -1,6 +1,6 @@
 .hero {
   position: relative;
-  background: url('../../assets/image.png') no-repeat center center;
+  background: url('../../assets/fundo.png') no-repeat center center;
   background-size: cover; /* Faz a imagem cobrir toda a área */
   background-position: center; /* Centraliza a imagem */
   background-repeat: no-repeat; /* Impede que a imagem se repita */
@@ -36,7 +36,7 @@
 }
 
 .container h2 {
-  color: rgb(71, 131, 223);
+  color: #920a0a;
   font-size: 2.5rem;
 
   margin-bottom: 15px;

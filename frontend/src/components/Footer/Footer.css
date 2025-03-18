@@ -1,7 +1,7 @@
 footer {
-  background-color: rgb(71, 131, 223);
+  background-color: #080808;
   text-align: center;
-  padding: 2px 0;
+  padding: 16px 0;
   position: relative;
   min-width: 100%;
   z-index: 2;
@@ -11,8 +11,8 @@ footer p {
   color: #fff;
   text-align: center;
   margin: 5px;
-  font-family: 'Roboto';
-  font-size: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
 }
 
 @media (max-width: 768px) {

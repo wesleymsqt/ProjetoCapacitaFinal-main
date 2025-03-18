@@ -8,7 +8,7 @@ function Header() {
     <Navbar expand="lg" bg="brown" variant="dark" sticky="top">
       <Container>
         <Navbar.Brand as={Link} to="/">
-          Café do Amanhã
+          <h3 className='navbar-title'>Miyabi Sushi</h3>
         </Navbar.Brand>
         
          {/* Botão de toggle para exibir/ocultar o menu em dispositivos móveis */}
