@@ -14,3 +14,13 @@ p{
     margin-inline: 20%;
     margin-bottom: 2%;
 }
+
+.about-title{
+    color: #920a0a;
+    font-size: 40px;
+}
+
+.about-text{
+    color: #080808;
+    font-size: 18px;
+}

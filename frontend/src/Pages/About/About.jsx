@@ -5,12 +5,9 @@ import './About.css';
 const About = () => {
   return (
     <div className="main-about">
-      <h2>Sobre Nós</h2>
-      <p>
-        O Café do Amanhã foi fundado por Nanda e Junior, dois apaixonados por
-        café e pela cidade de Fortaleza. Localizado na Avenida Beira Mar, nosso
-        café oferece um refúgio acolhedor onde você pode desfrutar de sabores
-        únicos e de uma vista deslumbrante.
+      <h2 className='about-title'>Sobre Nós</h2>
+      <p className='about-text'>
+        O Miyabi Sushi nasceu do sonho de Marina e Gustavo, dois apaixonados pela culinária japonesa e pela cidade de Fortaleza. Localizado na Avenida Beira Mar, nosso restaurante é um convite para saborear combinações autênticas em um ambiente sofisticado, com uma vista encantadora do mar.
       </p>
 
       {/* Container para o carrossel de imagens com a classe "carrossel" */}
