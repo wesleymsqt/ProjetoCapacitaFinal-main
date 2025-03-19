@@ -2,7 +2,7 @@
     flex: 1;
     display: block;
     background-color: #f3e9e1;
-    color: #4783df;
+    color: #920a0a;
     width: 100vw;
 
     & h2{
@@ -11,7 +11,7 @@
         text-align: center;
         font-style: normal;
         font-size: 4rem;
-        color: #4783df;
+        color: #920a0a;
         font-weight: 400;
     }
 
@@ -19,7 +19,7 @@
     margin: auto;
     text-align: center;
     font-size: 2rem;
-    color: #4783df;
+    color: #920a0a;
     font-weight: 400;
     }
 } 
