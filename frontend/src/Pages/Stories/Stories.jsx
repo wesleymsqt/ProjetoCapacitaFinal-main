@@ -6,30 +6,23 @@ function Stories() {
     return (
         <section className='container-everything'>
              <h2>Histórias</h2>
-             <p className='beginning- text'> Descubra as histórias inspiradoras que fazem parte do Café Do Amanhã. Desde as viajens aventureiras
-                 de Nanda até as serenatas à beaira-mar de Junior, cada momento é uma celebração de suas paixões </p>
+             <p className='beginning- text'>Descubra as histórias que inspiraram o Miyabi Sushi. Desde a paixão de Marina e Gustavo pela culinária japonesa até a busca por criar uma experiência única à beira-mar, cada detalhe reflete o amor pela tradição e pela qualidade. </p>
 
                  <div className='container-stories'>
                     <div className='box'>
-                        <h4>Rock nas estradas</h4>
-                        <p>Nanda sempre teve uma alma inquieta, apaixonada por viagens e pela liberdade que só a estrada pode oferecer. Durante uma viagem pelo interior do Brasil, 
-                            ao som de suas bandas de rock favoritas, ela descobriu um pequeno café escondido em uma vila remota. 
-                            Inspirada pelo lugar, decidiu trazer essa experiência única para o Café do Amanhã, onde o aroma do café se mistura com a trilha sonora de suas aventuras.</p>
+                        <h4>Sabor do Japão à Beira Mar</h4>
+                        <p>Marina e Gustavo sempre foram fascinados pela culinária japonesa e pela beleza de Fortaleza. Após muitas viagens ao Japão, decidiram transformar esse amor em um sonho: o Miyabi Sushi. Localizado na Avenida Beira Mar, o restaurante oferece uma experiência gastronômica única, com pratos autênticos preparados com ingredientes frescos e selecionados. A vista encantadora do mar torna o ambiente ainda mais especial, fazendo cada visita um momento inesquecível, onde o sabor e a tranquilidade se encontram em perfeita harmonia.</p>
                     </div>
 
                     <div className='box'>
-                        <h4>MPB a Beira Mar</h4>
-                        <p>Junior, por outro lado, encontra a verdadeira paz ao som das ondas do mar e de uma boa música brasileira. Sua paixão pela MPB é evidente em cada detalhe do Café do Amanhã,
-                            onde as melodias de grandes ícones como Vinícius de Moraes e Tom Jobim preenchem o ambiente.
-                            Foi em uma noite tranquila, sentado na areia e ouvindo "Garota de Ipanema", que Junior teve a ideia de criar um espaço onde música e café se encontram em perfeita harmonia.
+                        <h4>Tradição e Modernidade</h4>
+                        <p>No Miyabi Sushi, Marina e Gustavo preservam as tradições da culinária japonesa, incorporando toques modernos para criar pratos inovadores. O cardápio é uma verdadeira celebração da gastronomia nipônica, com sushis, sashimis e pratos quentes feitos com ingredientes frescos e de qualidade. O restaurante oferece uma experiência sensorial única, onde os sabores autênticos do Japão se misturam com uma abordagem criativa, proporcionando aos clientes uma refeição memorável, cheia de frescor e sabor.
                         </p>
                     </div>
 
                     <div className='box'>
-                        <h4>Um encontro de paixões</h4>
-                        <p>Quando Nanda e Junior se conheceram, parecia que o destino havia reunido duas almas complementares. 
-                            Enquanto Nanda compartilha suas histórias de viagem e seu amor pelo rock, Junior fala de suas noites à beira-mar e da suavidade da MPB. Juntos, transformam o Café do Amanhã em um
-                            lugar onde cada visita é uma nova história, cada xícara de café, um novo capítulo, e cada canção no ar, uma celebração de suas paixões.
+                        <h4>Um Refúgio à Beira Mar</h4>
+                        <p>O Miyabi Sushi é mais do que um restaurante; é um refúgio à beira-mar. Com uma vista deslumbrante de Fortaleza, o ambiente sofisticado e acolhedor torna cada refeição especial. A combinação da culinária japonesa autêntica com o som suave das ondas cria uma atmosfera única, que transforma cada visita em uma verdadeira experiência sensorial. No Miyabi, a qualidade dos pratos, o conforto e a beleza do mar se unem, proporcionando aos clientes um momento de puro prazer gastronômico e relaxamento.
                             
                         </p>
                     </div>

@@ -1,4 +1,4 @@
-.order-container {
+.order-container{
   max-width: 600px;
   margin: 0 auto;
   margin-top: 50px;
@@ -11,7 +11,7 @@
 .order-title {
   text-align: center;
   margin-bottom: 20px;
-  color: rgb(71, 131, 223);
+  color: #920a0a;
 }
 
 .form-group label {
@@ -36,7 +36,7 @@
 .category-button {
   flex: 1 0 calc(48% - 10px);
   margin: 5px;
-  background-color: #4783df;
+  background-color: #920a0a;
   color: #ffffff;
   border: none;
   border-radius: 5px;
@@ -45,8 +45,8 @@
 }
 
 .category-button:hover {
-  color: rgb(71, 131, 223);
-  background-color: #fff;
+  color-scheme: #920a0a;
+  background-color: #080808;
 }
 
 .order-total {
@@ -60,7 +60,7 @@
   display: block;
   width: 100%;
   padding: 10px;
-  background-color: #4783df;
+  background-color:#920a0a;
   color: #fff;
   border: none;
   border-radius: 5px;
@@ -69,8 +69,8 @@
 }
 
 .submit-button:hover {
-  color: rgb(71, 131, 223);
-  background-color: #fff;
+  background-color: #080808;
+  color: #920a0a;
 }
 
 /*Modal*/
@@ -84,14 +84,14 @@
 
 .custom-modal-header {
   background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-  border-bottom: 2px solid #dee2e6;
+  border-bottom: 2px solid #920a0a;
   padding: 1.5rem;
 }
 
 .modal-title-custom {
   font-size: 1.4rem;
   font-weight: 600;
-  color: #2c3e50;
+  color: #920a0a;
   width: 100%;
   text-align: center;
 }
@@ -109,7 +109,7 @@
 /* formulario do modal */
 .form-label {
   font-weight: 500;
-  color: #4a5568;
+  color: #920a0a;
   margin-bottom: 0.5rem;
 }
 
@@ -123,8 +123,9 @@
 
 .custom-select:focus,
 .custom-input:focus {
-  border-color: #4a90e2;
-  box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.1);
+  border-color: #920a0a;
+  color: #f8f9fa;
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1);
 }
 
 /* Buttons */
@@ -133,27 +134,30 @@
   border-radius: 8px;
   font-weight: 500;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  background-color: #920a0a;
 }
 
 .btn-primary.modal-btn {
-  background-color: #4a90e2;
+  background-color: #920a0a;
   border: none;
+  color:#ffffff;
 }
 
 .btn-primary.modal-btn:hover {
-  background-color: #357abd;
+  background-color: #080808;
   transform: translateY(-1px);
-  box-shadow: 0 5px 15px rgba(74, 144, 226, 0.3);
+  box-shadow: 0 5px 15px rgba(255, 255, 255, 0.3);
 }
 
 .btn-secondary.modal-btn {
-  background-color: #f1f5f9;
-  color: #4a5568;
+  background-color: #ffffff;
+  color: #920a0a;
   border: 2px solid #cbd5e0;
 }
 
 .btn-secondary.modal-btn:hover {
-  background-color: #e2e8f0;
+  background-color: #000000;
+  color: #fdfdfd;
   transform: translateY(-1px);
 }
 
@@ -163,9 +167,13 @@
   position: absolute;
   right: 1.5rem;
   top: 1.5rem;
+  background-color: #920a0a;
+
 }
 
 .btn-close:hover {
   filter: invert(0.3);
   transform: rotate(90deg) scale(1.1);
+  color: #000000;
+  background-color: #920a0a;
 }

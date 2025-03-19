@@ -17,7 +17,7 @@ const Contact = () => {
         <strong>Telefone:</strong> (85) 1234-5678
       </p>
       <p>
-        <strong>Email:</strong> contato@cafedoamanha.com
+        <strong>Email:</strong> contato@MiyabiSushi.com
       </p>
       {/* Formulário de contato */}
       <form

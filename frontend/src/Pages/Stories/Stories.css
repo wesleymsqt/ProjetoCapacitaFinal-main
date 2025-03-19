@@ -1,4 +1,4 @@
-.container-everything {
+.container-everything{
     margin-top: 100px;
     background-color: #f5f0e8b6;
     padding-top: 10px;
@@ -11,6 +11,7 @@ h2{
     margin-top: 2%;
     margin-bottom: 1%;
     text-align: center; 
+    color: #920a0a;
 }
 
 .beginning-text{
@@ -39,5 +40,5 @@ p{
 
 h4{
     font-family: 'Times New Roman', Times, serif;
-    color: rgb(73, 54, 54);
+    color:#920a0a;
 }

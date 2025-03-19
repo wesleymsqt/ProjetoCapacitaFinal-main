@@ -9,7 +9,7 @@
 }
 
 h2 {
-  color: #4783df;
+  color: #920a0a;
 }
 
 p {
@@ -38,7 +38,7 @@ input, textarea {
 button {
   margin-top: 15px;
   padding: 10px;
-  background-color: #4783df;
+  background-color: #920a0a;
   color: white;
   border: none;
   cursor: pointer;
@@ -47,5 +47,5 @@ button {
 
 button:hover {
   background-color: #fff;
-  color: rgb(71, 131, 223) !important;
+  color: #920a0a !important;
 }
