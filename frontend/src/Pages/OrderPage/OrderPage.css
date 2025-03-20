@@ -1,9 +1,14 @@
+.content{
+  background-color: #e6e6e6;
+}
+
 .order-container{
   max-width: 600px;
   margin: 0 auto;
   margin-top: 50px;
-  background-color: #f5f0e8b6;
-  padding: 20px;
+  background-color: #b7b7b7;
+  margin-bottom: 50px;
+  padding: 30px;
   border-radius: 10px;
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
 }
@@ -17,6 +22,7 @@
 .form-group label {
   display: block;
   margin-bottom: 5px;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .form-group input,
@@ -41,6 +47,8 @@
   border: none;
   border-radius: 5px;
   padding: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
   font-size: 16px;
 }
 
@@ -54,6 +62,9 @@
   font-size: 1.5rem;
   font-weight: bold;
   margin-top: 20px;
+  color: #080808;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
 }
 
 .submit-button {
@@ -66,6 +77,8 @@
   border-radius: 5px;
   font-size: 16px;
   margin-top: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
 }
 
 .submit-button:hover {
@@ -83,17 +96,19 @@
 }
 
 .custom-modal-header {
-  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  background-color: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
   border-bottom: 2px solid #920a0a;
   padding: 1.5rem;
 }
 
 .modal-title-custom {
   font-size: 1.4rem;
-  font-weight: 600;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
   color: #920a0a;
   width: 100%;
   text-align: center;
+  
 }
 
 .custom-modal-body {
@@ -109,6 +124,8 @@
 /* formulario do modal */
 .form-label {
   font-weight: 500;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
   color: #920a0a;
   margin-bottom: 0.5rem;
 }
@@ -124,7 +141,7 @@
 .custom-select:focus,
 .custom-input:focus {
   border-color: #920a0a;
-  color: #f8f9fa;
+  color: #080808;
   box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1);
 }
 
@@ -132,9 +149,9 @@
 .modal-btn {
   padding: 0.75rem 1.5rem;
   border-radius: 8px;
-  font-weight: 500;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
   background-color: #920a0a;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
 }
 
 .btn-primary.modal-btn {
@@ -145,7 +162,6 @@
 
 .btn-primary.modal-btn:hover {
   background-color: #080808;
-  transform: translateY(-1px);
   box-shadow: 0 5px 15px rgba(255, 255, 255, 0.3);
 }
 
@@ -153,27 +169,23 @@
   background-color: #ffffff;
   color: #920a0a;
   border: 2px solid #cbd5e0;
+
 }
 
 .btn-secondary.modal-btn:hover {
   background-color: #000000;
   color: #fdfdfd;
-  transform: translateY(-1px);
 }
 
 .btn-close {
-  filter: invert(0.5);
-  transition: transform 0.2s ease;
-  position: absolute;
   right: 1.5rem;
   top: 1.5rem;
-  background-color: #920a0a;
+  background-color: #909090;
+  opacity: 100%;
 
 }
 
 .btn-close:hover {
-  filter: invert(0.3);
-  transform: rotate(90deg) scale(1.1);
-  color: #000000;
   background-color: #920a0a;
+  opacity: 100%;
 }

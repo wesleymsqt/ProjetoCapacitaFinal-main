@@ -114,119 +114,121 @@ function OrderPage() {
   };
 
   return (
-    <div className="order-container">
-      <h2 className="order-title">Faça seu pedido</h2>
-      {/* Formulário para entrada dos dados do pedido */}
-      <form onSubmit={handleSubmit}>
-        {/* Campo para o nome do cliente */}
-        <div className="form-group">
-          <label htmlFor="name">Nome:</label>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            value={order.name}
-            onChange={e => setOrder({ ...order, name: e.target.value })}
-            required
-          />
-        </div>
-        {/* Campo para o número da mesa */}
-        <div className="form-group">
-          <label htmlFor="tableNumber">Número da Mesa:</label>
-          <input
-            type="text"
-            id="tableNumber"
-            name="tableNumber"
-            value={order.tableNumber}
-            onChange={e => setOrder({ ...order, tableNumber: e.target.value })}
-            required
-          />
-        </div><br />
-        {/* Lista de botões que representam as categorias do menu */}
-        <div className="menu-category-list">
-          {Object.keys(menuItems).map(category => (
-            <Button
-              key={category}
-              onClick={() => handleCategoryClick(category)}
-              className="category-button"
-            >
-              {category.charAt(0).toUpperCase() + category.slice(1)}
-            </Button>
-          ))}
-        </div>
-        {/* Exibe o total do pedido calculado dinamicamente */}
-        <h3 className="order-total">
-          Total: R$ {calculateTotal(order.items).toFixed(2)}
-        </h3>
-
-        <button type="submit" className="submit-button">
-          Enviar Pedido
-        </button>
-      </form>
-
-      {/* Modal para seleção do item e quantidade */}
-      <div>
-        <Modal
-          show={showModal}
-          onHide={() => setShowModal(false)}
-          centered
-          backdrop="static"
-        >
-          <Modal.Header closeButton className="custom-modal-header">
-            <Modal.Title className="modal-title-custom">
-              Selecione o item e a quantidade
-            </Modal.Title>
-          </Modal.Header>
-
-          <Modal.Body className="custom-modal-body">
-            <div className="form-group mb-4">
-              <label htmlFor="itemSelect" className="form-label">
-                Item:
-              </label>
-              <select
-                id="itemSelect"
-                className="form-select custom-select"
-                value={currentItem}
-                onChange={e => setCurrentItem(e.target.value)}
+    <div className="content">
+      <div className="order-container">
+        <h2 className="order-title">Faça seu pedido</h2>
+        {/* Formulário para entrada dos dados do pedido */}
+        <form onSubmit={handleSubmit}>
+          {/* Campo para o nome do cliente */}
+          <div className="form-group">
+            <label htmlFor="name">Nome:</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              value={order.name}
+              onChange={e => setOrder({ ...order, name: e.target.value })}
+              required
+            />
+          </div>
+          {/* Campo para o número da mesa */}
+          <div className="form-group">
+            <label htmlFor="tableNumber">Número da Mesa:</label>
+            <input
+              type="text"
+              id="tableNumber"
+              name="tableNumber"
+              value={order.tableNumber}
+              onChange={e => setOrder({ ...order, tableNumber: e.target.value })}
+              required
+            />
+          </div><br />
+          {/* Lista de botões que representam as categorias do menu */}
+          <div className="menu-category-list">
+            {Object.keys(menuItems).map(category => (
+              <Button
+                key={category}
+                onClick={() => handleCategoryClick(category)}
+                className="category-button"
               >
-                <option value="">Selecione um item</option>
-                {Object.keys(menuItems[currentCategory] || {}).map(item => (
-                  <option key={item} value={item}>
-                    {item} - R$ {menuItems[currentCategory][item].toFixed(2)}
-                  </option>
-                ))}
-              </select>
-            </div>
+                {category.charAt(0).toUpperCase() + category.slice(1)}
+              </Button>
+            ))}
+          </div>
+          {/* Exibe o total do pedido calculado dinamicamente */}
+          <h3 className="order-total">
+            Total: R$ {calculateTotal(order.items).toFixed(2)}
+          </h3>
 
-            <div className="form-group">
-              <label htmlFor="quantity" className="form-label">
-                Quantidade:
-              </label>
-              <input
-                type="number"
-                className="form-control custom-input"
-                value={currentQuantity}
-                min="1"
-                onChange={e => setCurrentQuantity(parseInt(e.target.value))}
-              />
-            </div>
-          </Modal.Body>
+          <button type="submit" className="submit-button">
+            Enviar Pedido
+          </button>
+        </form>
 
-          <Modal.Footer className="custom-modal-footer">
-            <button
-              className="btn btn-secondary modal-btn"
-              onClick={() => setShowModal(false)}
-            >
-              Cancelar
-            </button>
-            <button
-              className="btn btn-primary modal-btn"
-              onClick={handleAddItem}
-            >
-              Adicionar ao Pedido
-            </button>
-          </Modal.Footer>
-        </Modal>
+        {/* Modal para seleção do item e quantidade */}
+        <div>
+          <Modal
+            show={showModal}
+            onHide={() => setShowModal(false)}
+            centered
+            backdrop="static"
+          >
+            <Modal.Header closeButton className="custom-modal-header">
+              <Modal.Title className="modal-title-custom">
+                Selecione o item e a quantidade
+              </Modal.Title>
+            </Modal.Header>
+
+            <Modal.Body className="custom-modal-body">
+              <div className="form-group mb-4">
+                <label htmlFor="itemSelect" className="form-label">
+                  Item:
+                </label>
+                <select
+                  id="itemSelect"
+                  className="form-select custom-select"
+                  value={currentItem}
+                  onChange={e => setCurrentItem(e.target.value)}
+                >
+                  <option value="">Selecione um item</option>
+                  {Object.keys(menuItems[currentCategory] || {}).map(item => (
+                    <option key={item} value={item}>
+                      {item} - R$ {menuItems[currentCategory][item].toFixed(2)}
+                    </option>
+                  ))}
+                </select>
+              </div>
+
+              <div className="form-group">
+                <label htmlFor="quantity" className="form-label">
+                  Quantidade:
+                </label>
+                <input
+                  type="number"
+                  className="form-control custom-input"
+                  value={currentQuantity}
+                  min="1"
+                  onChange={e => setCurrentQuantity(parseInt(e.target.value))}
+                />
+              </div>
+            </Modal.Body>
+
+            <Modal.Footer className="custom-modal-footer">
+              <button
+                className="btn btn-secondary modal-btn"
+                onClick={() => setShowModal(false)}
+              >
+                Cancelar
+              </button>
+              <button
+                className="btn btn-primary modal-btn"
+                onClick={handleAddItem}
+              >
+                Adicionar ao Pedido
+              </button>
+            </Modal.Footer>
+          </Modal>
+        </div>
       </div>
     </div>
   );

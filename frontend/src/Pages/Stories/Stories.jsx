@@ -6,7 +6,7 @@ function Stories() {
     return (
         <section className='container-everything'>
              <h2>Histórias</h2>
-             <p className='beginning- text'>Descubra as histórias que inspiraram o Miyabi Sushi. Desde a paixão de Marina e Gustavo pela culinária japonesa até a busca por criar uma experiência única à beira-mar, cada detalhe reflete o amor pela tradição e pela qualidade. </p>
+             <p className='beginning-text'>Descubra as histórias que inspiraram o Miyabi Sushi. Desde a paixão de Marina e Gustavo pela culinária japonesa até a busca por criar uma experiência única à beira-mar, cada detalhe reflete o amor pela tradição e pela qualidade. </p>
 
                  <div className='container-stories'>
                     <div className='box'>
