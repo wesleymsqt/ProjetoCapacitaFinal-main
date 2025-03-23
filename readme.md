@@ -5,9 +5,10 @@
 ### Crie o arquivo .env com as variáveis de ambiente dentro da pasta prisma:
 
 ```bash
-DATABASE_URL="postgresql://postgres:admin@localhost:5432/sushi_db?schema=public"
+DATABASE_URL="postgresql://SEU_USUARIO:SUA_SENHA@localhost:5432/sushi_db?schema=public"
 PORT=3000
 ```
+- troque ```SEU_USUARIO``` e ```SUA_SENHA``` pelas credenciais de acesso ao banco de dados.
 
 Navegue até a pasta backend:
 
