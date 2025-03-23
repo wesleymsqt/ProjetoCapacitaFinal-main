@@ -2,7 +2,7 @@
 
 ## 1. Backend/Prisma
 
-### Crie o arquivo .env com as variáveis de ambiente:
+### Crie o arquivo .env com as variáveis de ambiente dentro da pasta prisma:
 
 ```bash
 DATABASE_URL="postgresql://postgres:admin@localhost:5432/sushi_db?schema=public"
