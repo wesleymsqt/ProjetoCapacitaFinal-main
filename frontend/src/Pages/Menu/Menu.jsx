@@ -1,14 +1,103 @@
-import React, { useState } from 'react';
-import { Tab, Tabs } from 'react-bootstrap';
-import './Menu.css';
-import coffe1 from '../../assets/pratos.jpg';
-import coffe2 from '../../assets/sobremesas.jpg';
-import coffe3 from '../../assets/especiais.jpg';
-import coffe4 from '../../assets/bebidas.jpg';
-import coffe5 from '../../assets/chas.jpg';
+import { useState, useEffect } from "react";
+import { Tab, Tabs, Spinner } from "react-bootstrap";
+import api from "../../services/api";
+import "./Menu.css";
+import categoryImage1 from "../../assets/pratos.jpg";
+import categoryImage2 from "../../assets/sobremesas.jpg";
+import categoryImage3 from "../../assets/especiais.jpg";
+import categoryImage4 from "../../assets/bebidas.jpg";
+import categoryImage5 from "../../assets/chas.jpg";
 
 const Menu = () => {
-  const [currentImage, setCurrentImage] = useState(coffe1);
+  const [currentImage, setCurrentImage] = useState(categoryImage1);
+  const [categories, setCategories] = useState([]);
+  const [products, setProducts] = useState([]);
+  const [currentCategory, setCurrentCategory] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const [initialLoad, setInitialLoad] = useState(true);
+
+  // Carregar categorias ao montar o componente
+  useEffect(() => {
+    const loadCategories = async () => {
+      try {
+        const data = await api.getCategories();
+        setCategories(data);
+      } catch (error) {
+        alert(error.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+    loadCategories();
+  }, []);
+
+  useEffect(() => {
+    if (categories.length > 0 && initialLoad) {
+      const firstCategoryId = categories[0].id;
+      setCurrentCategory(firstCategoryId);
+      handleCategorySelect(firstCategoryId);
+      setInitialLoad(false);
+    }
+  }, [categories]);
+
+  // Carregar produtos quando selecionar categoria
+  const handleCategorySelect = async (categoryId) => {
+    try {
+      setLoading(true);
+      setError(null);
+      if (!categories || categories.length === 0) {
+        throw new Error("Categorias ainda não foram carregadas.");
+      }
+      const id = Number(categoryId);
+      const selectedCategory = categories.find((cat) => cat.id === id);
+
+      if (!selectedCategory) {
+        throw new Error(`Categoria com ID ${id} não encontrada.`);
+      }
+      const data = await api.getProductsByCategory(selectedCategory.name);
+      setProducts(data);
+      setCurrentCategory(id);
+      updateCategoryImage(id);
+    } catch (error) {
+      setError(error.message);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  // Mapeamento de imagens para categorias
+  const updateCategoryImage = (categoryId) => {
+    const imageMap = {
+      1: categoryImage1,
+      2: categoryImage2,
+      3: categoryImage3,
+      4: categoryImage4,
+      5: categoryImage5,
+    };
+    setCurrentImage(imageMap[categoryId] || categoryImage1);
+  };
+
+  // Função para adicionar ícones conforme a categoria
+  const getCategoryIcon = (categoryName) => {
+    const icons = {
+      Pratos: "🍣",
+      Bebidas: "🥤",
+      Sobremesas: "🍰",
+      Chás: "🍵",
+    };
+    return icons[categoryName] || "";
+  };
+
+  if (loading) {
+    return (
+      <div className="text-center">
+        <Spinner animation="border" role="status">
+          <span className="visually-hidden">Carregando...</span>
+        </Spinner>
+      </div>
+    );
+  }
 
   return (
     <div className="content">
@@ -16,158 +105,55 @@ const Menu = () => {
         <h2>Miyabi Sushi</h2>
       </div>
       <div className="main-menu">
-
-        {/* Área para exibição da imagem que muda conforme a aba selecionada */}
         <div className="menu-img">
-          <img src={currentImage} alt="Café" />
+          <img src={currentImage} alt="Categoria" />
         </div>
-
-        {/* Área para as abas do menu */}
         <div className="menu-tabs">
           <Tabs
-            defaultActiveKey="cafes"
-            id="styles-menu-tabs"
+            activeKey={currentCategory}
+            id="menu-tabs"
+            onSelect={(k) => handleCategorySelect(k)}
             className="mb-3"
-
-            // Função que altera a imagem exibida de acordo com a aba selecionada
-            onSelect={key => {
-              switch (key) {
-                case 'cafes':
-                  setCurrentImage(coffe1);
-                  break;
-                case 'sobremesas':
-                  setCurrentImage(coffe2);
-                  break;
-                case 'especiais':
-                  setCurrentImage(coffe3);
-                  break;
-                case 'bebidas-geladas':
-                  setCurrentImage(coffe4);
-                  break;
-                case 'chas':
-                  setCurrentImage(coffe5);
-                  break;
-                default:
-                  setCurrentImage(coffe1);
-                  break;
-              }
-            }}
           >
-          
-            {/* Aba para Cafés */}
-            <Tab eventKey="cafes" title="Cafés ☕">
-              <ul className="menu-list">
-                <li>
-                  Águas de Março <span>R$ 5,00</span>
-                </li>
-                <li>
-                  Sampa <span>R$ 6,50</span>
-                </li>
-                <li>
-                  Garota de Ipanema <span>R$ 7,00</span>
-                </li>
-                <li>
-                  Chega de Saudade <span>R$ 6,00</span>
-                </li>
-                <li>
-                  Carinhoso <span>R$ 8,00</span>
-                </li>
-                <li>
-                  Cappuccino Malandragem <span>R$ 9,00</span>
-                </li>
-              </ul>
-            </Tab>
-
-            {/* Aba para Sobremesas */}
-            <Tab eventKey="sobremesas" title="Sobremesas 🍰">
-              <ul className="menu-list">
-                <li>
-                  Doce de Maracujá <span>R$ 8,00</span>
-                </li>
-                <li>
-                  Romeu e Julieta <span>R$ 9,00</span>
-                </li>
-                <li>
-                  Chão de Giz <span>R$ 10,00</span>
-                </li>
-                <li>
-                  Bolinho de Chuva <span>R$ 6,50</span>
-                </li>
-                <li>
-                  Coração Bobo <span>R$ 7,50</span>
-                </li>
-                <li>
-                  Pettit Gateau Ilegais <span>R$ 12,00</span>
-                </li>
-              </ul>
-            </Tab>
-
-            {/* Aba para Especiais */}
-            <Tab eventKey="especiais" title="Especiais 🎵">
-              <ul className="menu-list">
-                <li>
-                  Tarde em Itapoã <span>R$ 12,00</span>
-                </li>
-                <li>
-                  O Canto da Cidade <span>R$ 10,00</span>
-                </li>
-                <li>
-                  Fora da Ordem <span>R$ 11,50</span>
-                </li>
-                <li>
-                  O Leãozinho <span>R$ 9,50</span>
-                </li>
-                <li>
-                  Iron Maiden<span>R$ 11,50</span>
-                </li>
-                <li>
-                  Metallica <span>R$ 9,50</span>
-                </li>
-              </ul>
-            </Tab>
-
-            {/* Aba para Bebidas Geladas */}
-            <Tab eventKey="bebidas-geladas" title="Bebidas Geladas 🥤">
-              <ul className="menu-list">
-                <li>
-                  Sorvete de Baunilha <span>R$ 7,00</span>
-                </li>
-                <li>
-                  Milk Shake de Chocolate <span>R$ 10,00</span>
-                </li>
-                <li>
-                  Milk Shake de Morango <span>R$ 10,00</span>
-                </li>
-                <li>
-                  Vitamina de Banana <span>R$ 8,00</span>
-                </li>
-                <li>
-                  Vitamina de Morango <span>R$ 8,50</span>
-                </li>
-              </ul>
-            </Tab>
-            
-            {/* Aba para Chás */}
-            <Tab eventKey="chas" title="Chás 🍵">
-              <ul className="menu-list">
-                <li>
-                  Chá de Hortelã <span>R$ 4,50</span>
-                </li>
-                <li>
-                  Chá Verde <span>R$ 5,00</span>
-                </li>
-                <li>
-                  Chá de Camomila <span>R$ 4,50</span>
-                </li>
-                <li>
-                  Chá de Frutas Vermelhas <span>R$ 6,00</span>
-                </li>
-                <li>
-                  Chá de Gengibre e Limão <span>R$ 5,50</span>
-                </li>
-              </ul>
-            </Tab>
-          </Tabs><hr />
+            {categories.map((category) => (
+              <Tab
+                key={category.id}
+                eventKey={category.id}
+                title={`${category.name} ${getCategoryIcon(category.name)}`}
+              >
+                <div className="tab-content-wrapper">
+                  {error ? (
+                    <div className="alert alert-danger">{error}</div>
+                  ) : products.length === 0 ? (
+                    <p className="no-products">
+                      Nenhum produto disponível nesta categoria.
+                    </p>
+                  ) : (
+                    <ul className="menu-list">
+                      {products
+                        .filter(
+                          (product) =>
+                            Number(product.categoryId) === Number(category.id)
+                        )
+                        .map((product) => (
+                          <li key={product.id} className="menu-item">
+                            <div className="item-details">
+                              <h4>{product.name}</h4>
+                              <p className="description">
+                                {product.description}
+                              </p>
+                              <span className="price">
+                                R$ {product.price.toFixed(2).replace(".", ",")}
+                              </span>
+                            </div>
+                          </li>
+                        ))}
+                    </ul>
+                  )}
+                </div>
+              </Tab>
+            ))}
+          </Tabs>
         </div>
       </div>
     </div>
