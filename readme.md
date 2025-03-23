@@ -204,7 +204,7 @@ No body, selecione a opção raw e cole os dados dos produtos no formato JSON:
 ]
 ```
 
-## 1. Frontend/React
+## 2. Frontend/React
 
 ### Navegue até a pasta frontend:
 
