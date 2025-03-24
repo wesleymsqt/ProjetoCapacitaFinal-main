@@ -23,6 +23,10 @@ npm install
 ```
 
 Gere as configurações do Prisma:
+```bash
+npx prisma migrate dev
+```
+E:
 
 ```bash
 npx prisma generate
